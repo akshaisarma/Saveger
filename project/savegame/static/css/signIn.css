@@ -1,0 +1,82 @@
+#logInMessage {
+    font: 18px Georgia, "Times New Roman", Times, serif;
+    padding-top: 5%;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    font-size: 1.8em;
+}
+
+#signInBlock {
+    font: 18px Georgia, "Times New Roman", Times, serif;
+    margin-top: 10%;
+    margin-left: 40%;
+}
+
+form#signInForm {
+    background: gray;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    padding: 20px;
+    width: 400px;
+    text-align: center;
+}
+
+form#signInForm fieldset {
+    border: none;
+    margin-bottom: 10px;
+}
+
+form#signInForm fieldset:last-of-type {
+    margin-bottom: 0;
+}
+
+form#signInForm legend {
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+form#signInForm label {
+    font: 18px Georgia, "Times New Roman", Times, serif;
+    float: left;
+    width: 110px;
+}
+
+form#signInForm input {
+    background: #ffffff;
+    border: 1px solid gray;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+    outline: none;
+    padding: 5px;
+    width: 250px;
+}
+
+form#signInForm input:focus {
+    background: #eaeaea;
+}
+
+form#signInForm button {
+    background: rgb(210, 210, 210);
+    border: none;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+    color: black;
+    display: block;
+    font: 18px Georgia, "Times New Roman", Times, serif;
+    letter-spacing: 1px;
+    margin-left: 40%;
+    text-shadow: 0 1px 1px #000000;
+    text-transform: uppercase;
+}
+
+form#signInForm button:hover {
+    background: rgb(230, 230, 230);
+    cursor: pointer;
+}

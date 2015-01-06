@@ -1,0 +1,77 @@
+{% extends "v2/base.html" %}
+
+{% block title %} Search Results {% endblock %}
+
+{% block css %}
+    {% load static %}
+    {% get_static_prefix as STATIC_PREFIX %}
+    <link rel='stylesheet' href='{{ STATIC_PREFIX }}css/results.css' type='text/css' />
+{% endblock %}
+
+{% block content %} 
+ <div id='top'>
+    <div id='title'>
+            <div class='t_c'> Save Data </div>
+            <div class='t_c'> Game </div>
+            <div class='t_c'> Platform </div>
+            <div class='t_c'> Genre </div>
+            <div class='t_c'> Information </div>
+    </div>
+    {% if search_res %}
+    	{% for member in search_res.object_list %}
+			<div class="{% cycle 'gray' 'white' %}">
+				<span class='one'>
+					<a href="/gamepage/?uploaded_game_id={{ member.id }}"> {% firstof member.title "No Title Provided" %}</a>
+				</span>
+				<span class='one'>
+					<a href="/infopage/?game_id={{ member.game.id }}">{{ member.game.title }}</a>
+				</span>
+				<span class='one'>
+					 <a href="/platform/?p={{ member.platform.id }}">{{ member.platform.name }}</a>
+				</span>
+				<span class='one'>
+					 <a href="/genre/?g={{ member.game.genre.id }}">{{ member.game.genre.name }}</a>
+				</span>
+				<span class='one' style='font-size: 12px;'>
+					<div style='width: 45%; float: left'>
+						<a href="{{member.file}}">Download</a>
+					</div>
+					<div style='width: 30%; float: left'>
+							<span>Upvotes:</span>
+							<br />
+							<br />
+							<span>Downvotes:</span>
+					</div>
+					<div class= 'two' >
+					   <span>{{ member.upvote }} </span> 
+					   <br /> <br /> 
+					   <span>{{ member.downvote }}</span>
+					</div>
+				</span>
+			</div>
+		{% endfor %}
+	{% endif %}	
+	<div id = 'h_footer'>
+		{% if search_res %}
+			{% if search_res.has_previous %}
+				<a href="/results/?search={{qry|escape}}&page={{ search_res.previous_page_number }}">Previous</a>
+			{% endif %}
+			{% if ellipses1 %}
+				 | <a href="/results/?search={{qry|escape}}&page=1">1</a> | ... 
+			{% endif %}
+			{% for p in page_list %}
+				 | <a href="/results/?search={{qry|escape}}&page={{ p }}">{{ p }}</a> |
+			{% endfor %}
+			{% if ellipses2 %}
+				... | <a href="/results/?search={{qry|escape}}&page={{ search_res.paginator.num_pages }}">{{ search_res.paginator.num_pages }}</a> |
+			{% endif %}
+			{% if search_res.has_next %}
+				<a href="/results/?search={{qry|escape}}&page={{ search_res.next_page_number }}">Next</a>
+			{% endif %}
+		{% endif %}
+	</div>
+</div>
+{% endblock %}
+
+
+

@@ -1,0 +1,54 @@
+.panel-grid-container
+{
+    border: 1px solid black;
+    width: 900px;
+    border-radius: 8px;
+    margin-top: 50px;
+    position: static;
+}
+
+.panel-grid-container caption
+{
+    padding: 5px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 1px solid black;
+}
+
+.panel-grid-container td
+{
+    padding: 6px;
+    text-align: center;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.panel-grid-container th
+{
+    padding: 6px;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+
+
+.panel-grid-container .column-form
+{
+    float: left;
+    text-align: left;
+    padding: 5px;
+}
+
+
+.profile_avatar
+{
+    float: left;
+    height: 100%;
+    width: 220px;
+    margin-left: 10%;
+    margin-top: 50px;
+}
+
+#settings-panel
+{
+    display: none;        
+}

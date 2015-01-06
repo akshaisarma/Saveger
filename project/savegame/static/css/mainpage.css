@@ -1,0 +1,58 @@
+/* CSS file for main page */
+
+#mainpage_container {
+    margin: auto;
+    width: 70%;
+    height: 85%;
+}
+
+/*
+#search_bar
+{
+	width: 82%;
+	height: 15%;
+	padding-left: 10px;
+	font-size: 25px;
+	font-weight: 100;
+	color: grey;
+	border: 1px solid black;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	float: left;
+}
+
+#search
+{
+	width: 10%;
+	font-size: 14px;
+	margin-left: 5%;
+	float: left;
+}
+*/
+
+#latestTitle {
+    text-align: center;
+}
+
+#latest_ten_cont {
+    clear: both;
+    margin: auto;
+    margin-top: 2%;
+    padding: 0px 10px;
+    width: 75%;
+    height: auto;
+    background: rgb(210, 210, 210);
+    border: 1px solid rgb(120, 120, 120);
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+#latest_ten {
+    font: 18px Georgia, "Times New Roman", Times, serif;
+}
+
+.gtitles {
+    float: right;
+}

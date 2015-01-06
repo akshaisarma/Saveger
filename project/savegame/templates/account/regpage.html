@@ -1,0 +1,44 @@
+{% extends "v2/base.html" %}
+
+
+{% block title %} 
+    Registration Page 
+{% endblock %}
+{% load static %}
+{% get_static_prefix as STATIC_PREFIX %}
+{% block css %} 
+    <link rel='stylesheet' href="{{ STATIC_PREFIX }}css/regpage.css" type='text/css' /> 
+{% endblock %}
+{% block js %} 
+    <script src="{{ STATIC_PREFIX }}js/regpage.js"></script> 
+{% endblock %}
+
+{% block content %}
+<div id = 'formwrapper'>
+	<form id = 'registration_form' method = 'POST' action = "/registration/"> {% csrf_token %}
+		<div id = 'formcontents'>
+		 	<div id = 'validationerrors'>
+		 		{{ regform.non_field_errors }}
+		 	</div>	
+			<div id='username'>
+				<label for='id_username'><span class = 'fieldnames'>Username </span></label>
+				{{ regform.username }} {{ regform.username.errors }}
+			</div>
+			<div id='email'>
+				<label for='id_email'><span class = 'fieldnames'>E-Mail</span></label>
+				{{ regform.email }} {{ regform.email.errors }}
+			</div>
+			<div id='password'>
+				<label for='id_password'><span class = 'fieldnames'>Password </span></label>
+				{{ regform.password }} {{ regform.password.errors }}
+			</div>
+			<div id='repassword'>
+				<label for='id_repassword'><span class = 'fieldnames'>Re-Enter </span></label>
+				{{ regform.repassword }} {{ regform.repassword.errors }}
+			</div>
+		</div>
+        <input id = 'registerbutton' type = 'submit' value = 'Register'/>
+    </form>
+</div>
+{% endblock %}
+
